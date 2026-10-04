@@ -4,6 +4,9 @@ import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { UserModule } from './user/user.module.js';
 import { PostModule } from './post/post.module.js';
+import { CategoryModule } from './category/category.module.js';
+import { SubCategoryModule } from './sub-category/subCategory.module.js';
+import { BrandModule } from './brand/brand.module.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import z from 'zod';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -20,6 +23,9 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
   imports: [
     UserModule,
     PostModule,
+    CategoryModule,
+    SubCategoryModule,
+    BrandModule,
     ConfigModule.forRoot({
       envFilePath: "./config/.env",
       isGlobal: true,
